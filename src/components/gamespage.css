@@ -6,16 +6,107 @@
 }
 
 .playerinfo-desc {
-  position: absolute;
-  margin-left: 65px;
+  display: flex;
+  position: relative;
 }
 
-.playername{
-    margin-top: 12px;
-    font-weight: bold;
+.playername {
+  margin-top: 12px;
+  margin-left: 5px;
+  font-weight: bold;
+  width: 200px;
 }
-.playerdesc{
-margin-top: -20px;
+.playerdesc {
+  position: relative;
+  margin-top: 30px;
+  margin-left: -200px;
+}
+
+.searchfield {
+  height: 20px;
+  width: 250px;
+  position: relative;
+  left: 50%;
+  top: 10px;
+}
+
+.fa.fa-search {
+  margin-top: 18px;
+  margin-left: -20px;
+  position: relative;
+  left: 50%;
+  bottom: 4px;
+}
+
+.logout-button {
+  margin-top: 60px;
+  margin-left: -50px;
+}
+
+.gameslabel {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.categorieslabel {
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+  left: 80%;
+  top: -50px;
+}
+.gamenamelabel {
+  margin-bottom: 55px;
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 15px;
+  position: absolute;
+}
+.gamedescriptionlabel {
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 60%;
+}
+.playbutton {
+  top: -10px;
+  left: 60%;
+  position: relative;
+}
+.gameimage {
+  margin-left: 5px;
+}
+.categoriespanel {
+  position: relative;
+  left: 80%;
+  top: -10px;
+}
+.categorybutton1,
+.categorybutton2,
+.categorybutton3 {
+  display: block;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.horizontalLine {
+  background-color: grey;
+  opacity: 0.3;
+  height: 2px;
+  width: 75%;
+  margin-bottom: 3px;
+}
+.horizontalLineMain {
+  background-color: grey;
+  opacity: 0.3;
+  height: 2px;
+  width: 100%;
+  margin-bottom: 3px;
 }
 .playerinfo-searchinput {
   left: 50%;

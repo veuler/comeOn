@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router";
-import {Link} from "react-router-dom"
 
 function Login() {
   const history = useNavigate();
   const [vusername, setUsername] = useState("");
   const [vpassword, setPassword] = useState("");
-  const [userInfo, setUserInfo] = useState({});
   const [verified, setVerified] = useState(true);
 
   function submitLogin() {
@@ -27,7 +25,7 @@ function Login() {
         result.status === "success"
           ? (
             setTimeout(() => {
-              history("/gamespage", {state: result.player});
+              history("/gamespage", {state: {results: result.player, name: vusername}});
             }, 1200)
             )
           : setVerified(false)
