@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import "./gamespage.css";
 import { useNavigate } from "react-router";
-import comeon from "./comeone.game-1.0.min.js"
+import comeon from "./comeone.game-1.0.min.js";
+import logo from "./images/logo.svg"
 
 function Games() {
+  
   const allGames = [];
   const videoSlots = [];
   const slotMachines = [];
@@ -12,7 +14,7 @@ function Games() {
   const history = useNavigate();
   const [gameList, setGameList] = useState([]);
   const [chosenCategory, setchosenCategory] = useState(allGames);
-
+  const [searchFilter, setSearchFilter] = useState("")
   const { state } = useLocation();
 
   useEffect(() => {
@@ -37,6 +39,7 @@ function Games() {
     setchosenCategory(allGames);
   }, [gameList]);
 
+  console.log(allGames)
   function logoutHandler() {
     fetch("http://localhost:3001/logout", {
       method: "post",
@@ -50,8 +53,31 @@ function Games() {
     }).then((res) => history("/"));
   }
 
-  console.log(state.results.name);
+  function renderModal(item) {
+    return (
+      <>
+        <div>
+          <img className="gameimage" src={require("./" + item.icon)} />
+          <label className="gamenamelabel">{item.name}</label>
+          <label className="gamedescriptionlabel">
+            {item.description}
+          </label>
+          <button
+          className="playbutton"
+          onClick={() => {
+            // window.open("http://localhost:3000/playgame")
+            comeon.game.launch(item.code);
+            
+        }}
+          >Play</button>
+        </div>
+        <div className="horizontalLine"></div>
+      </>
+    );
+  }
   return (
+    <div className="rootdiv">
+      <img className="logo" src={logo} />
     <div className="gamesmainwrapper">
       <div className="mainwrapper">
         <img className="avatar" src={require("./" + state.results.avatar)} />
@@ -63,6 +89,7 @@ function Games() {
             className="searchfield"
             type="text"
             placeholder="Search Game"
+            onChange={(e) => setSearchFilter(e.target.value)}
           />
           <i className="fa fa-search" />
         </div>
@@ -96,29 +123,17 @@ function Games() {
             SLOT MACHINES
           </button>
         </div>
-        <div className="gamelistwrapper">,
-        <div id="game-launch"></div>
-          {chosenCategory.map((item) => {
-            return (
-              <>
-                <div>
-                  <img className="gameimage" src={require("./" + item.icon)} />
-                  <label className="gamenamelabel">{item.name}</label>
-                  <label className="gamedescriptionlabel">
-                    {item.description}
-                  </label>
-                  <button 
-                  className="playbutton"
-                  onClick={() => comeon.game.launch(item.code)}
-                  >
-                    Play</button>
-                </div>
-                <div className="horizontalLine"></div>
-              </>
-            );
-          })}
+        <div className="gamelistwrapper">
+          <div className="game-launch" id="game-launch"></div>
+          {searchFilter.length > 0 ? (
+            chosenCategory.map((item) => item.name.toLowerCase().includes(searchFilter) && renderModal(item))
+          )
+          :
+          chosenCategory.map((item) => renderModal(item))
+          }
         </div>
       </div>
+    </div>
     </div>
   );
 }
