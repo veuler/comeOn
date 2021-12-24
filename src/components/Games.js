@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./gamespage.css";
 import { useNavigate } from "react-router";
+import comeon from "./comeone.game-1.0.min.js"
 
 function Games() {
   const allGames = [];
@@ -95,7 +96,8 @@ function Games() {
             SLOT MACHINES
           </button>
         </div>
-        <div className="gamelistwrapper">
+        <div className="gamelistwrapper">,
+        <div id="game-launch"></div>
           {chosenCategory.map((item) => {
             return (
               <>
@@ -105,7 +107,11 @@ function Games() {
                   <label className="gamedescriptionlabel">
                     {item.description}
                   </label>
-                  <button className="playbutton">Play</button>
+                  <button 
+                  className="playbutton"
+                  onClick={() => console.log(comeon.game.launch('starburst'))}
+                  >
+                    Play</button>
                 </div>
                 <div className="horizontalLine"></div>
               </>
