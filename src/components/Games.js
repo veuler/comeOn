@@ -39,7 +39,6 @@ function Games() {
     setchosenCategory(allGames);
   }, [gameList]);
 
-  console.log(allGames)
   function logoutHandler() {
     fetch("http://localhost:3001/logout", {
       method: "post",
@@ -69,12 +68,13 @@ function Games() {
             comeon.game.launch(item.code);
             
         }}
-          >Play</button>
+          >{"Play >"}</button>
         </div>
         <div className="horizontalLine"></div>
       </>
     );
   }
+  
   return (
     <div className="rootdiv">
       <img className="logo" src={logo} />
