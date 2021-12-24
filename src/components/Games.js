@@ -33,8 +33,8 @@ function Games() {
   });
 
   useEffect(() => {
-    setchosenCategory(allGames)
-  }, [gameList])
+    setchosenCategory(allGames);
+  }, [gameList]);
 
   function logoutHandler() {
     fetch("http://localhost:3001/logout", {
@@ -74,44 +74,45 @@ function Games() {
       </div>
 
       <div className="gamespanel">
-      <div className="categorieslabel">Categories</div>
-      <div className="categoriespanel">
-        <button
-          className="categorybutton1"
-          onClick={() => setchosenCategory(allGames)}
-        >
-          ALL
-        </button>
-        <button
-          className="categorybutton2"
-          onClick={() => setchosenCategory(videoSlots)}
-        >
-          VIDEO SLOTS
-        </button>
-        <button
-          className="categorybutton3"
-          onClick={() => setchosenCategory(slotMachines)}
-        >
-          SLOT MACHINES
-        </button>
+        <div className="categorieslabel">Categories</div>
+        <div className="categoriespanel">
+          <button
+            className="categorybutton1"
+            onClick={() => setchosenCategory(allGames)}
+          >
+            ALL
+          </button>
+          <button
+            className="categorybutton2"
+            onClick={() => setchosenCategory(videoSlots)}
+          >
+            VIDEO SLOTS
+          </button>
+          <button
+            className="categorybutton3"
+            onClick={() => setchosenCategory(slotMachines)}
+          >
+            SLOT MACHINES
+          </button>
+        </div>
+        <div className="gamelistwrapper">
+          {chosenCategory.map((item) => {
+            return (
+              <>
+                <div>
+                  <img className="gameimage" src={require("./" + item.icon)} />
+                  <label className="gamenamelabel">{item.name}</label>
+                  <label className="gamedescriptionlabel">
+                    {item.description}
+                  </label>
+                  <button className="playbutton">Play</button>
+                </div>
+                <div className="horizontalLine"></div>
+              </>
+            );
+          })}
+        </div>
       </div>
-        {chosenCategory.map((item) => {
-          return (
-            <>
-              <div>
-                <img className="gameimage" src={require("./" + item.icon)} />
-                <label className="gamenamelabel">{item.name}</label>
-                <label className="gamedescriptionlabel">
-                  {item.description}
-                </label>
-                <button className="playbutton">Play</button>
-              </div>
-              <div className="horizontalLine"></div>
-            </>
-          );
-        })}
-      </div>
-      
     </div>
   );
 }
