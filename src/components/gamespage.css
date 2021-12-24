@@ -1,0 +1,25 @@
+.avatar {
+  float: left;
+  border-radius: 50px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.playerinfo-desc {
+  position: absolute;
+  margin-left: 65px;
+}
+
+.playername{
+    margin-top: 12px;
+    font-weight: bold;
+}
+.playerdesc{
+margin-top: -20px;
+}
+.playerinfo-searchinput {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
