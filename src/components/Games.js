@@ -109,7 +109,7 @@ function Games() {
                   </label>
                   <button 
                   className="playbutton"
-                  onClick={() => console.log(comeon.game.launch('starburst'))}
+                  onClick={() => comeon.game.launch(item.code)}
                   >
                     Play</button>
                 </div>
