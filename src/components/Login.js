@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router";
+import logo from "./images/logo2.png"
 
 function Login() {
   const history = useNavigate();
@@ -30,17 +31,11 @@ function Login() {
             )
           : setVerified(false)
       );
-
-    // res.status === 200
-    //     ? setTimeout(() => {
-    //         history("/gamespage");
-    //       }, 1200)
-    //     : setVerified(false);
-
     req.catch((res) => alert("An error occured."));
   }
   return (
     <div>
+      <img className="logo2" src={logo} />
       {!verified && (
         <p className="wronglogin">Username or password is wrong.</p>
       )}

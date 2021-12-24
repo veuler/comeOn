@@ -94,7 +94,7 @@ function Games() {
           <i className="fa fa-search" />
         </div>
         <button className="logout-button" onClick={logoutHandler}>
-          Log Out
+          {"< Log Out"}
         </button>
 
         <div className="gameslabel">Games</div>
