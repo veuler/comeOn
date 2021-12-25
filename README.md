@@ -24,4 +24,4 @@ Currently there are 3 players in the database;
 first, navigate to "src" ```cd src``` then run
 ```json-server --watch mock/mock-data.json --port 3001 --middlewares mock/mock-api.js```
 
-then, run your localhost at ```port:3000```
+then, on a new terminal, run your localhost at ```port:3000```
