@@ -68,6 +68,7 @@
   border-color: black;
   font-weight: bold;
   font-family: 'Arimo', sans-serif;
+  cursor: pointer;
 }
 
 .gamelistwrapper{
@@ -106,6 +107,7 @@
   width: 60%;
 }
 .playbutton {
+  text-decoration: none;
   top: -10px;
   left: 60%;
   position: relative;
@@ -114,7 +116,11 @@
   border-color: black;
   font-weight: bold;
   font-family: 'Arimo', sans-serif;
-  height: 30px;
+  font-size: 17px;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 .game-launch{
     position: relative;

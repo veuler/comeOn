@@ -1,0 +1,15 @@
+.gobackbutton {
+    text-decoration: none;
+    top: -10px;
+    position: relative;
+    background-color: black;
+    color: white;
+    border-color: black;
+    font-weight: bold;
+    font-family: 'Arimo', sans-serif;
+    font-size: 17px;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
