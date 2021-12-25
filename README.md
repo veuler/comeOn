@@ -21,7 +21,10 @@ Currently there are 3 players in the database;
 
 ***Requirements;***
 
-first, navigate to "src" ```cd src``` then run
-```json-server --watch mock/mock-data.json --port 3001 --middlewares mock/mock-api.js```
+1 - install json-server ```npm install -g json-server```
 
-then, on a new terminal, run your localhost at ```port:3000```
+2- navigate to "src" ```cd src```
+
+3 - run ```json-server --watch mock/mock-data.json --port 3001 --middlewares mock/mock-api.js```
+
+4 - on a new terminal, run your localhost at ```port:3000```
